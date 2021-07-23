@@ -1,2 +1,38 @@
-<h1>Projects#dashboard</h1>
-<p>Find me in app/views/projects/dashboard.html.erb</p>
+<div class="container">
+    <nav class="navbar navbar-light" id="search-nav">
+			<p class="navbar-brand" id="search-ins">Search your proyect!</p>
+			<form class="form-inline" id="search-form">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="status">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+	</nav>
+	<hr>
+	<h4 class="text-center">Please use only words "Porposal", "In progress" and "Finished" in your search.</h4>
+	<hr>
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Name</th>
+				<th scope="col">Description</th>
+				<th scope="col">Begin date</th>
+				<th scope="col">End date</th>
+				<th scope="col">Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @projects.each do |project| %>
+				<tr>
+					<td><%= project.id %></td>
+					<td><%= project.name %></td>
+					<td><%= project.description %></td>
+					<td><%= project.begin %></td>
+					<td><%= project.end %></td>
+					<td><%= project.status %></td>
+				</tr>
+			<% end %>	
+		</tbody>
+	</table>
+
+
+</div>

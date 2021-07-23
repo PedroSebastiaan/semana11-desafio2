@@ -1,2 +1,25 @@
-<h1>Projects#created</h1>
-<p>Find me in app/views/projects/created.html.erb</p>
+<div class="container">
+    <hr>
+    <% if @project.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                Prohibited this operation from being saved:
+            </h2>
+            <br>
+            <ul>
+                <%= @project.errors.full_messages.each do %>
+                <% end %>
+            </ul>
+            <div class="text-center">
+                <hr> 
+                <h3>Try again <%= link_to 'HERE', projects_new_path %>.</h3>
+            </div>
+        </div>
+    <% else %>
+    <div class="text-center">
+        <h1>Your project was uploated!</h1>
+    </div>
+    <% end %>
+    <hr>
+    <h2 class="text-center">You can watch all your projects in the <%= link_to 'dashboard', projects_dashboard_path %>.</h2>
+</div>

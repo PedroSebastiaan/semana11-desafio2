@@ -1,2 +1,29 @@
-<h1>Projects#new</h1>
-<p>Find me in app/views/projects/new.html.erb</p>
+<div class="container my-5">
+    <form method="POST" action="/projects/created">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Name</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Type the name." name="name">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Type the description of the proyect." name="description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Begin date</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Type the date when the proyect starts." name="begin">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">End date</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Type the date when the proyect ends." name="end">
+        </div>
+        <label for="formGroupExampleInput">Project Status</label>
+        <select class="custom-select" name="status">
+            <option value="Porposal" selected>Porposal</option>
+            <option value="In progress">In progress</option>
+            <option value="Finished">Finished</option>
+        </select>
+        <button type="submit" class="btn btn-primary my-5">Submit</button>
+    </form>
+    <h2 class="text-center">You can watch all your projects in the <%= link_to 'dashboard', projects_dashboard_path %>.</h2>
+</div>
